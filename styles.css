@@ -17,13 +17,6 @@
     --normal-font-size : 0.938rem;
 }
 
-@media screen and (min-width : 768px){
-    :root {
-        --big-font-size : 3.5rem;
-        --h2-font-size : 2rem;
-        --normal-font-size : 1rem;
-    }
-}
 
 :root {
     --mb-1 : 0.5rem;
@@ -115,6 +108,17 @@ img{
         padding: 2rem;
         background-color: var(--second-color);
         transition: 0.5s;
+    }
+}
+@media screen and (max-width: 768px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: var(--z-fixed);
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
     }
 }
 
@@ -485,16 +489,31 @@ form .btn2{
         width: 80px;
         top: 3rem;
     }
+    .bd_grid {
+        width: calc(100% - var(--mb-6));
+        margin-left: var(--mb-4);
+        margin-right: var(--mb-4);
+    }
+
     .nav{
         height: calc(var(--header-height) + 1rem);
 
 
     }
+    
+    .nav_menu {
+        position: relative;
+        right: 0;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding: 0;
+    }
 
     .nav_items {
         margin-left: var(--mb-6);
         margin-bottom: 0;
-
+        display: flex;
     }
     .nav_list{
           display: flex;
@@ -505,6 +524,7 @@ form .btn2{
     }
     .nav_link{
         color: var(--second-color);
+        margin-right: var(--mb-4);
     }
     .home{
         height: 100vh;
@@ -549,9 +569,10 @@ form .btn2{
     }
    
   
-
+    
+      
+      
 }
-
 @media screen and (max-width: 768px) {
     .contact_container .row1 {
         flex-direction: column;
